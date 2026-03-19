@@ -1,7 +1,7 @@
-# HYCOM_DNN
+# HYCOM_KPPDNN
 
 ## Description
-HYCOM_DNN is an extension of the HYCOM ocean model that integrates a deep neural network (DNN) into the KPP vertical mixing scheme.
+HYCOM_KPPDNN is an extension of the HYCOM ocean model that integrates a deep neural network (DNN) into the KPP vertical mixing scheme.
 
 ## Details
 The source code is developed based on the original HYCOM repository:  
