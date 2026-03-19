@@ -7,6 +7,8 @@ HYCOM_DNN is an extension of the HYCOM ocean model that integrates a deep neural
 The source code is developed based on the original HYCOM repository:  
 https://github.com/HYCOM/HYCOM-src
 
+The Fortran Keras Bridge (FKB) module (https://github.com/scientific-computing/FKB) is used to recover DNN structures from saved weight & bias files and make predictions online in *HYCOM_DNN*
+
 ---
 
 ## **Features**
@@ -17,9 +19,13 @@ https://github.com/HYCOM/HYCOM-src
 
 ---
 
+## **Directories**
+- `HYCOM_KPPDNN_src`: HYCOM_KPP_DNN source codes & FKB modules
+- `dnn_param`: DNN weights and biases used by FKB to recover DNN structure & parameters to normalize DNN inputs
+
 ## **Configuration**
 
-A control flag `dnnflg` is introduced:
+A control flag `dnnflg` is introduced in the source codes:
 
 - `dnnflg = 0`: Standard KPP_LMD  
 - `dnnflg = 1`: KPP_DNN with no Stokes drift input  
@@ -42,9 +48,9 @@ A control flag `dnnflg` is introduced:
 
 ## **Usage**
 
-1. Edit `blkdat.input`  
-2. Set DNN weights path  
-3. Compile HYCOM  
+1. Edit `dnnflg` in `blkdat.input`  
+2. Set DNN weights path in `blkdat.F90`
+3. Compile HYCOM  using `csh Make.csh`
 4. Run the model  
 
 ---
